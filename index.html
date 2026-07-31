@@ -1,176 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rubi Khadka | Portfolio</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: Arial, sans-serif;
-        }
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        body{
-            background:#f4f4f4;
-            color:#333;
-            line-height:1.6;
-        }
+<style>
+:root{
+    --primary:#2563eb;
+    --secondary:#1e293b;
+    --light:#f8fafc;
+    --dark:#0f172a;
+    --accent:#38bdf8;
+}
 
-        header{
-            background:#2c3e50;
-            color:white;
-            text-align:center;
-            padding:50px 20px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        header h1{
-            font-size:40px;
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:#333;
+}
 
-        header p{
-            margin-top:10px;
-            font-size:18px;
-        }
+header{
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    color:white;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
 
-        nav{
-            background:#34495e;
-            text-align:center;
-            padding:15px;
-        }
+.hero{
+    max-width:1200px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:0 15px;
-            font-weight:bold;
-        }
+.hero-content{
+    flex:1;
+}
 
-        nav a:hover{
-            color:#f1c40f;
-        }
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
 
-        section{
-            max-width:1000px;
-            margin:30px auto;
-            padding:20px;
-            background:white;
-            border-radius:10px;
-            box-shadow:0 0 10px rgba(0,0,0,0.1);
-        }
+.hero-content h3{
+    color:#cbd5e1;
+    margin-bottom:20px;
+    font-weight:500;
+}
 
-        h2{
-            color:#2c3e50;
-            margin-bottom:15px;
-        }
+.hero-content p{
+    font-size:1.05rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
 
-        .projects{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-        }
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        .project-card{
-            background:#ecf0f1;
-            padding:15px;
-            border-radius:8px;
-        }
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-        .project-card h3{
-            margin-bottom:10px;
-        }
+.btn-primary{
+    background:white;
+    color:var(--primary);
+}
 
-        footer{
-            text-align:center;
-            background:#2c3e50;
-            color:white;
-            padding:20px;
-            margin-top:20px;
-        }
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
 
-        .btn{
-            display:inline-block;
-            background:#3498db;
-            color:white;
-            padding:10px 20px;
-            text-decoration:none;
-            border-radius:5px;
-            margin-top:10px;
-        }
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
 
-        .btn:hover{
-            background:#2980b9;
-        }
-    </style>
+.btn-outline:hover{
+    background:white;
+    color:var(--primary);
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.image-placeholder{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    border:5px solid white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:5rem;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:var(--secondary);
+    font-size:2rem;
+}
+
+.about-container,
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    margin-bottom:20px;
+    color:var(--primary);
+}
+
+.info{
+    margin-bottom:15px;
+}
+
+.info strong{
+    color:var(--secondary);
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.skill{
+    background:var(--primary);
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+}
+
+.contact-links a{
+    display:block;
+    text-decoration:none;
+    color:#333;
+    margin:15px 0;
+    font-size:1.1rem;
+}
+
+.contact-links i{
+    color:var(--primary);
+    width:30px;
+}
+
+footer{
+    background:var(--secondary);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:2.3rem;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.about-container,
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+.image-placeholder{
+    width:250px;
+    height:250px;
+}
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Rubi Khadka</h1>
-        <p>Web Developer | Designer | Student</p>
-        <a href="tel:9817182346" class="btn">Contact Me</a>
-    </header>
+<header>
+    <div class="hero">
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <div class="hero-content">
+            <h1>Rubi Khadka</h1>
+            <h3>B.Ed Science Student | Science Enthusiast</h3>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hello! I am a passionate web developer interested in creating
-            modern and responsive websites. I enjoy learning new technologies
-            and building useful projects.
-        </p>
-    </section>
+            <p>
+                Motivated and dedicated science student with a strong academic
+                background in Pure Science. Currently pursuing a Bachelor's
+                degree in Education (Science) and passionate about learning,
+                teaching, research, and personal development.
+            </p>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>SQL</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="projects">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A personal website showcasing my skills and projects.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Student Management System</h3>
-                <p>A database project for managing student records.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Online Library</h3>
-                <p>A web application for managing books and users.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
             </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: rubikhadka302@gmail.com.</p>
-        <p>Phone: +977-9817182346</p>
-        <p>Location: Nepal</p>
-    </section>
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 Rubi Khadka. All Rights Reserved.</p>
-    </footer>
+    </div>
+</header>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-container">
+
+        <div class="card">
+            <h3>Personal Information</h3>
+
+            <div class="info">
+                <strong>Full Name:</strong> Rubi Khadka
+            </div>
+
+            <div class="info">
+                <strong>Email:</strong> rubikhadka302@gmail.com
+            </div>
+
+            <div class="info">
+                <strong>Phone:</strong> +977 9806584709
+            </div>
+
+            <div class="info">
+                <strong>Nationality:</strong> Nepali
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Education</h3>
+
+            <div class="info">
+                <strong>+2 Level:</strong><br>
+                Completed +2 in Pure Science
+            </div>
+
+            <div class="info">
+                <strong>Bachelor's Degree:</strong><br>
+                Bachelor Running in B.Ed Science
+            </div>
+
+            <div class="info">
+                <strong>Focus:</strong><br>
+                Science Education, Teaching, and Learning
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills & Interests</h2>
+
+    <div class="skills">
+        <div class="skill">Science Education</div>
+        <div class="skill">Teaching</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Research</div>
+        <div class="skill">Presentation</div>
+        <div class="skill">Critical Thinking</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-container">
+
+        <div class="card">
+            <h3>Get In Touch</h3>
+
+            <div class="contact-links">
+                <a href="mailto:rubikhadka302@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    rubikhadka302@gmail.com
+                </a>
+
+                <a href="tel:+9779806584709">
+                    <i class="fas fa-phone"></i>
+                    +977 9806584709
+                </a>
+
+                <a href="https://wa.me/9779806584709" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Chat
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Social Media</h3>
+
+            <div class="contact-links">
+                <a href="#">
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Rubi Khadka | Personal Portfolio</p>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+            .scrollIntoView({
+                behavior: 'smooth'
+            });
+    });
+});
+</script>
 
 </body>
 </html>
